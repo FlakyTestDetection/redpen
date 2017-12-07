@@ -9,12 +9,12 @@ before_install:
 before_script:
 - sudo apt-get update
 - sudo apt-get install phantomjs
-env:
-  global:
-  - secure:"Dupdb/HgNXKu8kOo7/RcpMCAyEZA8hLw77nVPTxXUo39UUI/ipnbUfRHamiWC2/MCqTEHu+1eReCmuFj2ULk4g+vi/8VYjrmX1TiHwikIFEAGrRRK0VkuWegqloYtXuxa7gtuQ96PWjqJ48op/WYyYvKiH0cFOMHsZOt5cl9PL4="
-jdk:
-- oraclejdk8
 language: java
+
+sudo: required
+
+jdk:
+  - oraclejdk8
 notifications:
   email: false
   slack:
@@ -24,4 +24,3 @@ notifications:
     - 'dashbot: %{repository_name} %{build_id}'
 script:
 - ./run_test.sh
-sudo: required
